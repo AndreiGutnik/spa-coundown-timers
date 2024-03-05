@@ -43,7 +43,6 @@ module.exports = (argv) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: `${publicDir}/index.html`,
-        inject: "body",
       }),
       new WebpackNotifierPlugin({ alwaysNotify: false }),
     ],
