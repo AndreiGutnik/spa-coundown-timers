@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpackConfig = require("./webpack.config");
 const publicDir = path.resolve(__dirname, "public");
 
-module.exports = (env, argv) => {
+module.exports = (argv) => {
   const watchMode = argv.liveReload || false;
   const modeEnv = argv.mode || "development";
   const isProd = modeEnv === "production";
