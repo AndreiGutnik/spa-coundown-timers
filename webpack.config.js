@@ -48,6 +48,11 @@ const modules = {
     // --- Загрузчик для html (html-loader)
     { test: /\.(html)$/, use: ['html-loader'] },
     // --- Загрузчики стилей
+    // {
+    //   test: /\.css$/i,
+    //   include: path.resolve(__dirname, 'src'),
+    //   use: ['style-loader', 'css-loader', 'postcss-loader'],
+    // },
     {
       test: /\.(s[ac]|c)ss$/i,
       use: [
@@ -101,7 +106,7 @@ const modules = {
 };
 
 const resolve = {
-  extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
   alias: {
     App: path.resolve(__dirname, 'src'),
     Components: path.resolve(__dirname, 'src/components'),
@@ -122,13 +127,6 @@ module.exports = {
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
-  // output: {
-  //   filename: watchMode
-  //     ? 'assets/[name].[hash].js'
-  //     : 'assets/[name].[chunkhash].js',
-  //   path: path.resolve(__dirname, 'build'),
-  //   publicPath: '/',
-  // },
 
   resolve,
   module: modules,

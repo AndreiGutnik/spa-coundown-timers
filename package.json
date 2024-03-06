@@ -12,6 +12,7 @@
   "author": "Andrii Hutnyk <andriihutnyk@seznam.cz>",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.13",
     "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.20",
     "@types/react-router-dom": "^5.3.3",
@@ -22,9 +23,13 @@
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.1",
     "node": "^21.6.2",
+    "postcss-csso": "^6.0.1",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.2",
     "react-window": "^1.8.10",
     "redux": "^5.0.1",
     "redux-logger": "^3.0.6",
@@ -32,12 +37,9 @@
     "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.2",
-    "@babel/core": "^7.18.13"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@babel/preset-env": "^7.24.0",
