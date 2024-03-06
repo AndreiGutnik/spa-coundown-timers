@@ -13,9 +13,14 @@ var client = __webpack_require__(338);
 ;// CONCATENATED MODULE: ./src/components/App.tsx
 
 var App = function App() {
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("h1", null, "Coundown timerss"));
+  return /*#__PURE__*/react.createElement("div", {
+    className: "bg-red-300"
+  }, /*#__PURE__*/react.createElement("h1", {
+    className: "text-4xl text-green-400"
+  }, "Coundown timerss"));
 };
 ;// CONCATENATED MODULE: ./src/index.tsx
+
 
 
 
