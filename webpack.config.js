@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const publicDir = path.resolve(__dirname, 'public');
+const publicDir = path.resolve(__dirname, 'public/');
 
 let mode = 'development';
 let target = 'web';
@@ -11,6 +11,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const devServer = {
+  client: {
+    logging: 'error',
+    overlay: {
+      errors: true,
+      warnings: false,
+      runtimeErrors: true,
+    },
+  },
   historyApiFallback: true,
   open: true,
   compress: true,
@@ -26,6 +34,7 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     template: `${publicDir}/index.html`,
+    inject: 'body',
   }),
 ];
 
@@ -106,6 +115,7 @@ const modules = {
 };
 
 const resolve = {
+  modules: ['node_modules'],
   extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
   alias: {
     App: path.resolve(__dirname, 'src'),
