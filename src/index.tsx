@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './components/App';
-import './index.css';
+import './tailwind.css';
+import TimersProvider from './contexts/timers/Provider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <TimersProvider>
     <App />
-  </React.StrictMode>
+  </TimersProvider>
 );
