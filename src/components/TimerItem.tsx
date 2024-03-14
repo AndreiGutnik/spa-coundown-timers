@@ -12,9 +12,7 @@ export interface TimerItemProps {
 export default function TimerItem({ timer }: TimerItemProps) {
   const { delTimer } = useContext(timersContext);
   const [show, setShow] = useState<boolean>(false);
-  const [currentTimer, setCurrentTimer] = useState<number>(() =>
-    timerToMs(timer.timer)
-  );
+  const [currentTimer, setCurrentTimer] = useState<number>(() => timerToMs(timer.timer));
   const [timeforTimer, setTimeforTimer] = useState<number>(0);
   const [time, setTime] = useState<string>(msToTime(currentTimer));
   const intervalId = useRef(null);
