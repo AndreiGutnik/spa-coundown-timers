@@ -3,7 +3,7 @@ import { Timer } from '@/contexts/timers/Provider';
 import timersContext from '../contexts/timers/context';
 import { msToTime, timerToMs } from '../helpers/helpers';
 import TimerStyles, { Style } from './TimerStyles';
-import DeleteTimerFormModal from './delete-timer-form-modal';
+import DeleteTimerFormModal from './Delete-timer-form-modal';
 
 export interface TimerItemProps {
   timer: Timer;
