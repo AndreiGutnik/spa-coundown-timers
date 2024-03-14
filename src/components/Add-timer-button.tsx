@@ -11,7 +11,13 @@ export default function AddTimerButton() {
 
   const handleAddTimer = (values: AddTimerInputValues) => {
     const id = nanoid();
-    addTimer({ id, ...values });
+    const currentTimer = { id, ...values };
+    addTimer(currentTimer);
+    const timersLocalStorage = JSON.parse(localStorage.getItem('timers') || '');
+    localStorage.setItem(
+      'timers',
+      JSON.stringify([...timersLocalStorage, currentTimer])
+    );
     setShow(false);
   };
 

@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo, useState } from 'react';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import timersContext from './context';
 
 export interface Timer {
@@ -14,6 +14,13 @@ export interface ProviderProps {
 
 export default function Provider({ children }: ProviderProps): JSX.Element {
   const [timers, setTimers] = useState<Timer[]>([]);
+
+  useEffect(() => {
+    if (!localStorage.getItem('timers')) {
+      localStorage.setItem('timers', JSON.stringify([]));
+    }
+    setTimers(JSON.parse(localStorage.getItem('timers') || ''));
+  }, []);
 
   const addTimer = (timer: Timer) => {
     setTimers(prevState => [...prevState, timer]);

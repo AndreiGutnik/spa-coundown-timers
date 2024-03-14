@@ -47,6 +47,11 @@ export default function TimerItem({ timer }: TimerItemProps) {
 
   const onDelete = () => {
     delTimer(timer.id);
+    const timersLocalStorage = JSON.parse(localStorage.getItem('timers') || '');
+    localStorage.setItem(
+      'timers',
+      JSON.stringify(timersLocalStorage.filter((t: Timer) => t.id !== timer.id))
+    );
     setShow(false);
   };
 
