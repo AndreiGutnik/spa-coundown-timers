@@ -64,12 +64,7 @@ const modules = {
     // },
     {
       test: /\.(s[ac]|c)ss$/i,
-      use: [
-        MiniCssExtractPlugin.loader,
-        'css-loader',
-        'sass-loader',
-        'postcss-loader',
-      ],
+      use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
     },
     {
       test: /\.(js|mjs|jsx|ts|tsx)$/,
