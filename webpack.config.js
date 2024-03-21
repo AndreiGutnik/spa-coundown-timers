@@ -26,6 +26,7 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     template: `${publicDir}/index.html`,
+    inject: 'body',
   }),
 ];
 
