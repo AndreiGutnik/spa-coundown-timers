@@ -1,23 +1,20 @@
-import React, { lazy, useContext, useState } from 'react';
-import timersContext from '../contexts/timers/context';
+import React, { lazy, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { PlusIcon } from '@heroicons/react/24/solid';
 import { AddTimerInputValues } from './Add-timer-form';
+import { useTimer } from '../contexts/timers/Provider';
 const AddTimerFormModal = lazy(() => import('./Add-timer-form-modal'));
 
 export default function AddTimerButton() {
   const [show, setShow] = useState<boolean>(false);
-  const { addTimer } = useContext(timersContext);
+  const { addTimer } = useTimer();
 
   const handleAddTimer = (values: AddTimerInputValues) => {
     const id = nanoid();
     const currentTimer = { id, ...values };
     addTimer(currentTimer);
     const timersLocalStorage = JSON.parse(localStorage.getItem('timers') || '');
-    localStorage.setItem(
-      'timers',
-      JSON.stringify([...timersLocalStorage, currentTimer])
-    );
+    localStorage.setItem('timers', JSON.stringify([...timersLocalStorage, currentTimer]));
     setShow(false);
   };
 
@@ -34,11 +31,7 @@ export default function AddTimerButton() {
           Add timer
         </button>
       </div>
-      <AddTimerFormModal
-        onSubmit={handleAddTimer}
-        show={show}
-        onClose={() => setShow(false)}
-      />
+      <AddTimerFormModal onSubmit={handleAddTimer} show={show} onClose={() => setShow(false)} />
     </>
   );
 }

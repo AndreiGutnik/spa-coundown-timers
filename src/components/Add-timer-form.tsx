@@ -18,12 +18,7 @@ interface FormErrorProps {
 }
 
 const FormError = ({ name }: FormErrorProps) => {
-  return (
-    <ErrorMessage
-      name={name}
-      render={message => <p className="text-red-500">{message}</p>}
-    />
-  );
+  return <ErrorMessage name={name} render={message => <p className="text-red-500">{message}</p>} />;
 };
 
 export interface AddTimerFormProps {
@@ -78,12 +73,7 @@ export default function AddTimerForm({ onSubmit }: AddTimerFormProps) {
               Red
             </div>
             <div className="w-[100px] inline-flex items-center px-3.5 py-1 rounded-full text-sm bg-orange-100 text-orange-700">
-              <Field
-                className="mr-2"
-                type="radio"
-                name="style"
-                value="Orange"
-              />
+              <Field className="mr-2" type="radio" name="style" value="Orange" />
               Orange
             </div>
             <div className="w-[100px] inline-flex items-center px-3.5 py-1 rounded-full text-sm bg-blue-100 text-blue-700">

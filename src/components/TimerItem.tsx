@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Timer } from '@/contexts/timers/Provider';
-import timersContext from '../contexts/timers/context';
+import React, { useEffect, useRef, useState } from 'react';
+import { Timer, useTimer } from '../contexts/timers/Provider';
+
 import { msToTime, timerToMs } from '../helpers/helpers';
 import TimerStyles, { Style } from './TimerStyles';
 import DeleteTimerFormModal from './Delete-timer-form-modal';
@@ -10,7 +10,7 @@ export interface TimerItemProps {
 }
 
 export default function TimerItem({ timer }: TimerItemProps) {
-  const { delTimer } = useContext(timersContext);
+  const { delTimer } = useTimer();
   const [show, setShow] = useState<boolean>(false);
   const [currentTimer, setCurrentTimer] = useState<number>(() => timerToMs(timer.timer));
   const [timeforTimer, setTimeforTimer] = useState<number>(0);

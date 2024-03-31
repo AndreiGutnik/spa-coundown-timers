@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import timersContext from '../contexts/timers/context';
+import React from 'react';
 import TimerItem from './TimerItem';
+import { useTimer } from '../contexts/timers/Provider';
 
 export interface TimersListProps {}
 
 export default function TimersList({}: TimersListProps) {
-  const { timers } = useContext(timersContext);
+  const { timers } = useTimer();
 
   return (
     <>

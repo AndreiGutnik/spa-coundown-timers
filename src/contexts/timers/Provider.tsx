@@ -1,5 +1,5 @@
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
-import timersContext from './context';
+import React, { ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext } from 'react';
 
 export interface Timer {
   id: string;
@@ -7,6 +7,16 @@ export interface Timer {
   timer: string;
   style: string;
 }
+
+interface ContextProviderType {
+  timers: Timer[];
+  addTimer: (timer: Timer) => void;
+  delTimer: (id: string) => void;
+}
+
+const timersContext = createContext<ContextProviderType>(null);
+
+export const useTimer = () => useContext(timersContext);
 
 export interface ProviderProps {
   children: ReactNode;
@@ -34,9 +44,5 @@ export default function Provider({ children }: ProviderProps): JSX.Element {
     return { timers, addTimer, delTimer };
   }, [timers]);
 
-  return (
-    <timersContext.Provider value={providrValue}>
-      {children}
-    </timersContext.Provider>
-  );
+  return <timersContext.Provider value={providrValue}>{children}</timersContext.Provider>;
 }
