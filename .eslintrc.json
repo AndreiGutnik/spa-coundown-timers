@@ -4,13 +4,13 @@
     "es2021": true
   },
   "extends": [
-    //"plugin:@sourceType-eslint/recommended",
+    "plugin:@sourceType-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    //"google",
+    "google",
     "plugin:prettier/recommended",
     "prettier",
     "prettier/react"
@@ -27,6 +27,6 @@
   "rules": {
     "require-jsdoc": "off",
     "@typescript-eslint/ban-es-comment": "off",
-    "@typescript-eslint/ban-types": 0
+    "@typescript-eslint/ban-types": 1
   }
 }
