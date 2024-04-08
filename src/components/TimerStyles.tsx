@@ -14,11 +14,7 @@ export interface TimerStylesProps {
   disabled?: boolean;
 }
 
-export default function TimerStyles({
-  children,
-  style,
-  disabled,
-}: TimerStylesProps) {
+export default function TimerStyles({ children, style, disabled }: TimerStylesProps) {
   return (
     <div
       className={clsx(

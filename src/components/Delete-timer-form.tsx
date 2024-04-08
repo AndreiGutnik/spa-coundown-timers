@@ -5,10 +5,7 @@ export interface DeleteTimerFormProps {
   handleClose: () => void;
 }
 
-export default function DeleteTimerForm({
-  onDelete,
-  handleClose,
-}: DeleteTimerFormProps) {
+export default function DeleteTimerForm({ onDelete, handleClose }: DeleteTimerFormProps) {
   return (
     <div className="flex items-center justify-center gap-5">
       <button

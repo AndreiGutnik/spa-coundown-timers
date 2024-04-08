@@ -6,10 +6,7 @@ export interface AddTimerFormModalProps extends ModalProps {
   onSubmit: AddTimerFormProps['onSubmit'];
 }
 
-export default function AddTimerFormModal({
-  onSubmit,
-  ...rest
-}: AddTimerFormModalProps) {
+export default function AddTimerFormModal({ onSubmit, ...rest }: AddTimerFormModalProps) {
   return (
     <Modal {...rest}>
       <AddTimerForm onSubmit={onSubmit} />
